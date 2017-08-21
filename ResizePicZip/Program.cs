@@ -61,6 +61,7 @@ namespace ResizePicZip
 
         private static void changeSizeImageInZipFile(string FileName)
         {
+            Console.WriteLine("***** " + Path.GetFileName(FileName) + " *****");
             using (var zto = new FileStream(FileName, FileMode.Open))
             using (var zipArc = new ZipArchive(zto, ZipArchiveMode.Update))
             {
@@ -104,6 +105,7 @@ namespace ResizePicZip
                     Console.WriteLine(" ... Complete!");
                 });
             }
+            Console.WriteLine(Path.GetFileName(FileName) + " ... All Complete!");
         }
     }
 }
